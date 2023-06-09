@@ -1,0 +1,39 @@
+@import "./../../variables";
+
+footer {
+    background: url("./images/pattern-hills.svg") no-repeat 85% 0;
+    background-size: 260% $footer_hight;
+    height: $footer_hight;
+    @include centeredBlock;
+}
+
+.socialLinks {
+    & {
+        display: flex;
+        list-style: none;
+        margin: 46px 0 0;
+        padding: 0;
+    }
+
+    .link {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: block;
+        height: $social_link_height;
+        margin: 0 16px;
+        width: $social_link_width;
+    }
+}
+
+.fb {
+    background-image: url("./images/icon-facebook.svg");
+}
+
+.pin {
+    background-image: url("./images/icon-pinterest.svg");
+}
+
+.in {
+    background-image: url("./images/icon-instagram.svg");
+}

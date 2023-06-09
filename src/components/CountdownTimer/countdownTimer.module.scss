@@ -1,0 +1,30 @@
+@import "./../../variables";
+
+.container {
+    flex: 1 auto;
+    display: flex;
+    flex-direction: column;
+    max-width: $desktop;
+}
+
+.timer {
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    font-weight: bold;
+    font-size: 18px;
+    letter-spacing: 6px;
+    margin: 143px 40px 55px;
+    text-transform: uppercase;
+}
+
+@media (min-width: $desktop) {
+    .header {
+        font-size: 21px;
+        letter-spacing: 8px;
+        margin: 136px 40px 105px;
+    }
+}
+

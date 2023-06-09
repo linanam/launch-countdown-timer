@@ -1,0 +1,55 @@
+@import "./variables";
+
+@font-face {
+    font-family: RedHatText;
+    src: url(./fonts/RedHatText-Regular.ttf);
+}
+
+@font-face {
+    font-family: RedHatText;
+    src: url(./fonts/RedHatText-Bold.ttf);
+    font-weight: bold;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    background: $very_dark_blue url("./images/bg-stars.svg") repeat 0 0;
+    color: $white;
+    font-family: RedHatText, sans-serif;
+    font-size: 14px;
+    min-height: 100vh;
+    margin: 0;
+    text-align: center;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    min-width: $mobile;
+}
+
+.flip [class*="prev_top"] {
+    animation: flipTop 0.5s ease-in-out;
+    animation-fill-mode: both;
+    transform-origin: center bottom;
+}
+
+@keyframes flipTop {
+    50% {
+        transform: rotateX(0deg);
+        z-index: 2;
+    }
+    0%,
+    99% {
+        opacity: 0.99;
+    }
+    100% {
+        transform: rotateX(-90deg);
+        opacity: 0;
+    }
+}

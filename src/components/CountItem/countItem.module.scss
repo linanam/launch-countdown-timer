@@ -1,0 +1,164 @@
+@import "./../../variables";
+
+$item_height: 67px;
+$item_width: 70px;
+$item_border_radius: 10px;
+$item_border_shift: calc(#{$item_border_radius} / -2);
+$item_border_top_shift: calc(100% - #{$item_border_radius}/2);
+
+.item {
+    height: $item_height;
+    margin: 0 7px;
+    position: relative;
+    width: $item_width;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+}
+
+.label {
+    color: $grayish_blue;
+    font-size: 8px;
+    letter-spacing: 2.2px;
+    margin-top: 12px;
+    text-transform: uppercase;
+}
+
+.value {
+    background: $dark_desaturated_blue;
+    border-radius: $item_border_radius;
+    height: $item_height;
+    color: $soft_red;
+    font-weight: bold;
+    font-size: 34px;
+    line-height: $item_height;
+    position: relative;
+    width: $item_width;
+}
+
+.prev,
+.prev_top {
+    @include absolute();
+}
+
+.prev {
+    height: $item_height;
+
+    span {
+        &::before,
+        &::after {
+            background: $very_dark_blue;
+            border-radius: 50%;
+            content: '';
+            height: $item_border_radius;
+            position: absolute;
+            top: calc(50% - #{$item_border_radius}/2);
+            width: $item_border_radius;
+            z-index: 10;
+        }
+
+        &::before {
+            left: $item_border_shift;
+        }
+
+        &::after {
+            right: $item_border_shift;
+        }
+    }
+
+    &::after {
+        background: rgba(0, 0, 0, 0.2);
+        content: '';
+        display: block;
+        height: 50%;
+        @include absolute();
+        z-index: 5;
+    }
+}
+
+.prev_top {
+    height: 50%;
+    border-radius: $item_border_radius;
+    overflow: hidden;
+}
+
+.next_bot {
+    border-radius: 0 0 $item_border_radius $item_border_radius;
+    height: 50%;
+    top: 50%;
+    overflow: hidden;
+    left: 0;
+    width: 100%;
+
+    & > span {
+        height: $item_height;
+        @include absolute();
+        margin-top: -50%;
+    }
+}
+
+
+@media (min-width: $desktop) {
+    $item_height: 140px;
+    $item_width: 147px;
+    $item_border_radius: 16px;
+
+    .item {
+        height: $item_height;
+        margin: 0 16px;
+        width: $item_width;
+    }
+
+    .value {
+        border-radius: $item_border_radius;
+        height: $item_height;
+        font-size: 80px;
+        width: $item_width;
+        line-height: $item_height;
+    }
+
+    .prev,
+    .next_bot span {
+        height: $item_height;
+    }
+
+    .next_bot {
+        height: 50%;
+    }
+
+    .prev,
+    .prev_top {
+        span {
+            &::before,
+            &::after {
+                height: $item_border_radius;
+                width: $item_border_radius;
+            }
+        }
+    }
+
+    .prev span {
+        &::before,
+        &::after {
+            top: calc(50% - #{$item_border_radius}/2);
+        }
+    }
+
+    .prev_top {
+        border-radius: $item_border_radius;
+        height: 50%;
+    }
+
+    .next_bot {
+        border-radius: 0 0 $item_border_radius $item_border_radius;
+    }
+
+    .label {
+        font-size: 14px;
+        letter-spacing: 6.2px;
+        margin-top: 26px;
+        font-weight: bold;
+    }
+}

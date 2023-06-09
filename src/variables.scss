@@ -1,0 +1,26 @@
+$grayish_blue: hsl(237, 18%, 59%);
+$soft_red: hsl(345, 95%, 68%);
+$white: hsl(0, 0%, 100%);
+$dark_desaturated_blue: hsl(236, 21%, 26%);
+$very_dark_blue: hsl(235, 16%, 14%);
+$very_dark_blue: hsl(234, 17%, 12%);
+
+$footer_hight: 168px;
+$social_link_height: 30px;
+$social_link_width: 25px;
+
+$desktop: 1440px;
+$mobile: 375px;
+
+@mixin centeredBlock() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin absolute() {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
