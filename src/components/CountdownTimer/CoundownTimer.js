@@ -3,8 +3,9 @@ import {useEffect, useRef, useState} from "react";
 import {ExpiredMessage} from "../ExpiredMessage/ExpiredMessage";
 import {CountItem} from "../CountItem/CountItem";
 
-export const CountdownTimer = (props) => {
-    const {targetDate} = props;
+export const CountdownTimer = () => {
+    const targetDate = new Date();
+    targetDate.setDate(targetDate.getDate() + 14);
     const [countDown, setCountDown] = useState(null);
     const [prevCountDown, setPrevCountDown] = useState(null);
     const [isExpired, setIsExpired] = useState(false);
