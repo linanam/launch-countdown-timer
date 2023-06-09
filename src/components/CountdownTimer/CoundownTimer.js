@@ -6,13 +6,6 @@ import {CountItem} from "../CountItem/CountItem";
 export const CountdownTimer = (props) => {
     const {targetDate} = props;
     const [countDown, setCountDown] = useState(null);
-    const [shuffle, setShuffle] = useState({
-        days: true,
-        hours: true,
-        minutes: true,
-        seconds: true
-    });
-
     const [prevCountDown, setPrevCountDown] = useState(null);
     const [isExpired, setIsExpired] = useState(false);
 
